@@ -5,43 +5,10 @@ namespace Tomat.Mutiny.Loader.API.Schema;
 /// <summary>
 ///     Represents the dependencies of a schema.
 /// </summary>
-public sealed class SchemaDependencies {
-    /// <summary>
-    ///     The dependencies that this mod provides.
-    /// </summary>
-    public List<SchemaDependency> Provides { get; }
-
-    /// <summary>
-    ///     The dependencies that this mod depends on.
-    /// </summary>
-    public List<SchemaDependency> Depends { get; }
-
-    /// <summary>
-    ///     The dependencies that this mod recommends.
-    /// </summary>
-    public List<SchemaDependency> Recommends { get; }
-
-    /// <summary>
-    ///     The dependencies that this mod suggests.
-    /// </summary>
-    public List<SchemaDependency> Suggests { get; }
-
-    /// <summary>
-    ///     The dependencies that this mod breaks.
-    /// </summary>
-    public List<SchemaDependency> Breaks { get; }
-
-    /// <summary>
-    ///     The dependencies that this mod conflicts with.
-    /// </summary>
-    public List<SchemaDependency> Conflicts { get; }
-
-    public SchemaDependencies(List<SchemaDependency> provides, List<SchemaDependency> depends, List<SchemaDependency> recommends, List<SchemaDependency> suggests, List<SchemaDependency> breaks, List<SchemaDependency> conflicts) {
-        Provides = provides;
-        Depends = depends;
-        Recommends = recommends;
-        Suggests = suggests;
-        Breaks = breaks;
-        Conflicts = conflicts;
-    }
-}
+/// <param name="Provides">The dependencies that this mod provides.</param>
+/// <param name="Depends">The dependencies that this mod depends on.</param>
+/// <param name="Recommends">The dependencies that this mod recommends.</param>
+/// <param name="Suggests">The dependencies that this mod suggests.</param>
+/// <param name="Breaks">The dependencies that this mod breaks.</param>
+/// <param name="Conflicts">The dependencies that this mod conflicts with.</param>
+public sealed record SchemaDependencies (List<SchemaDependency> Provides, List<SchemaDependency> Depends, List<SchemaDependency> Recommends, List<SchemaDependency> Suggests, List<SchemaDependency> Breaks, List<SchemaDependency> Conflicts);
