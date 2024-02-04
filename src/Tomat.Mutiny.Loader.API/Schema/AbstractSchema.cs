@@ -12,10 +12,10 @@ namespace Tomat.Mutiny.Loader.API.Schema;
 ///     that interface with the <see cref="Etc"/> property; custom schemas
 ///     should not directly define new JSON properties.
 ///     <br />
-///     <see cref="Schema"/> defines base properties expected by all mod
+///     <see cref="AbstractSchema"/> defines base properties expected by all mod
 ///     schemas.
 /// </remarks>
-public abstract class Schema {
+public abstract class AbstractSchema {
     /// <summary>
     ///     The version of the schema.
     /// </summary>
@@ -56,7 +56,7 @@ public abstract class Schema {
     ///     <see langword="true"/> if the JSON string was successfully parsed;
     ///     otherwise, <see langword="false"/>.
     /// </returns>
-    public static bool TryParse<T>(string json, [NotNullWhen(returnValue: true)] out T? schema) where T : Schema, new() {
+    public static bool TryParse<T>(string json, [NotNullWhen(returnValue: true)] out T? schema) where T : AbstractSchema, new() {
         schema = null;
 
         try {
@@ -68,7 +68,7 @@ public abstract class Schema {
                 return false;
 
             return schemaVersionToken.Value<int>() switch {
-                1 => V1.ISchema.TryParse(jObject, out schema),
+                1 => V1.Schema.TryParse(jObject, out schema),
                 _ => false,
             };
         }

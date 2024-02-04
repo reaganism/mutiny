@@ -5,7 +5,7 @@ namespace Tomat.Mutiny.Loader.API.Schema;
 /// <summary>
 ///     Exposes additional information included within a schema.
 /// </summary>
-public sealed class SchemaEtc : V1.ISchemaEtc {
+public sealed class SchemaEtc {
     private readonly Dictionary<string, object?> data;
 
     /// <summary>

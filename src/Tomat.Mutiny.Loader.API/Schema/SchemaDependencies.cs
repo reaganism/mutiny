@@ -5,7 +5,7 @@ namespace Tomat.Mutiny.Loader.API.Schema;
 /// <summary>
 ///     Represents the dependencies of a schema.
 /// </summary>
-public sealed class SchemaDependencies : V1.ISchemaDependencies {
+public sealed class SchemaDependencies {
     /// <summary>
     ///     The dependencies that this mod provides.
     /// </summary>

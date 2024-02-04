@@ -5,7 +5,7 @@ namespace Tomat.Mutiny.Loader.API.Schema;
 /// <summary>
 ///     Represents the unessential metadata of a schema.
 /// </summary>
-public sealed class SchemaMetadata : V1.ISchemaMetadata {
+public sealed class SchemaMetadata {
     /// <summary>
     ///     The display name (typically in English) of the mod.
     /// </summary>

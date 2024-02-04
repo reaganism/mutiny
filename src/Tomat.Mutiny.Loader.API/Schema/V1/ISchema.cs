@@ -10,7 +10,7 @@ namespace Tomat.Mutiny.Loader.API.Schema.V1;
 /// <summary>
 ///     Version 1 definition of the mod schema.
 /// </summary>
-internal interface ISchema {
+internal static class Schema {
     private sealed class JsonSchema {
         [JsonProperty("schemaVersion")]
         public int SchemaVersion { get; set; }
@@ -81,37 +81,7 @@ internal interface ISchema {
         public string Version { get; set; } = string.Empty;
     }
 
-    /// <summary>
-    ///     The version of the schema.
-    /// </summary>
-    int SchemaVersion { get; }
-
-    /// <summary>
-    ///     The ID of the mod.
-    /// </summary>
-    string Id { get; }
-
-    /// <summary>
-    ///     The SemVer-compliant version of the mod.
-    /// </summary>
-    string Version { get; }
-
-    /// <summary>
-    ///     The unessential metadata of the mod.
-    /// </summary>
-    public ISchemaMetadata Metadata { get; }
-
-    /// <summary>
-    ///     The dependencies of the mod.
-    /// </summary>
-    public ISchemaDependencies Dependencies { get; }
-
-    /// <summary>
-    ///     Additional objects.
-    /// </summary>
-    public ISchemaEtc Etc { get; }
-
-    public static bool TryParse<T>(JObject jObject, [NotNullWhen(returnValue: true)] out T? schema) where T : Schema, new() {
+    public static bool TryParse<T>(JObject jObject, [NotNullWhen(returnValue: true)] out T? schema) where T : API.Schema.AbstractSchema, new() {
         const int schema_version = 1;
 
         schema = null;
