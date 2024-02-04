@@ -81,7 +81,7 @@ internal static class Schema {
         public string Version { get; set; } = string.Empty;
     }
 
-    public static bool TryParse<T>(JObject jObject, [NotNullWhen(returnValue: true)] out T? schema) where T : API.Schema.AbstractSchema, new() {
+    public static bool TryParse<T>(JObject jObject, [NotNullWhen(returnValue: true)] out T? schema) where T : AbstractSchema, new() {
         const int schema_version = 1;
 
         schema = null;
@@ -121,6 +121,7 @@ internal static class Schema {
             Version = semverVersion,
             Metadata = metadata,
             Dependencies = dependencies,
+            Etc = new SchemaEtc(jsonSchema.Etc ?? new Dictionary<string, object?>()),
         };
 
         return true;
