@@ -1,0 +1,29 @@
+﻿{
+  "schemaVersion": 1,
+  "id": "dev.tomat.mutiny.netcore",
+  "version": "1.0.0",
+  "metadata": {
+    "name": "Base .NET Core Mutiny API Implementation",
+    "contact": {},
+    "authors": [
+      {
+        "name": "Tomat"
+      }
+    ],
+    "contributors": []
+  },
+  "dependencies": {
+    "provides": [],
+    "depends": [
+      {
+        "id": "dev.tomat.mutiny",
+        "version": "1.0.0"
+      }
+    ],
+    "recommends": [],
+    "suggests": [],
+    "breaks": [],
+    "conflicts": []
+  },
+  "etc": {}
+}

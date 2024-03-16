@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
+using JetBrains.Annotations;
 
 namespace Tomat.Mutiny.Loader.API.Schema;
 
 /// <summary>
 ///     Exposes additional information included within a schema.
 /// </summary>
+[PublicAPI]
 public sealed class SchemaEtc {
     private readonly Dictionary<string, object?> data;
 

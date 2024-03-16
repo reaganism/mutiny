@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <LangVersion>latest</LangVersion>
+        <Nullable>enable</Nullable>
+        <RootNamespace>Tomat.Mutiny</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Remove="mutiny.plugin.json" />
+        <EmbeddedResource Include="mutiny.plugin.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Tomat.Mutiny\Tomat.Mutiny.csproj" />
+    </ItemGroup>
+
+</Project>

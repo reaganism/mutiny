@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using JetBrains.Annotations;
 
 namespace Tomat.Mutiny.Loader.API.Schema;
 
@@ -9,4 +10,5 @@ namespace Tomat.Mutiny.Loader.API.Schema;
 /// <param name="Contact">The contact information for the mod.</param>
 /// <param name="Authors">The authors of the mod.</param>
 /// <param name="Contributors">The contributors to the mod.</param>
+[PublicAPI]
 public sealed record SchemaMetadata (string? Name, Dictionary<string, string> Contact, List<SchemaAuthor> Authors, List<SchemaAuthor> Contributors);

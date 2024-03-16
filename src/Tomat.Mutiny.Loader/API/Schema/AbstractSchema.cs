@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using JetBrains.Annotations;
 using Newtonsoft.Json.Linq;
 using Semver;
 
@@ -15,6 +16,7 @@ namespace Tomat.Mutiny.Loader.API.Schema;
 ///     <see cref="AbstractSchema"/> defines base properties expected by all mod
 ///     schemas.
 /// </remarks>
+[PublicAPI]
 public abstract class AbstractSchema {
     /// <summary>
     ///     The version of the schema.

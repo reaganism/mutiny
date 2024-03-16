@@ -1,0 +1,24 @@
+﻿{
+  "schemaVersion": 1,
+  "id": "dev.tomat.mutiny.loader",
+  "version": "1.0.0",
+  "metadata": {
+    "name": "Mutiny Loader API",
+    "contact": {},
+    "authors": [
+      {
+        "name": "Tomat"
+      }
+    ],
+    "contributors": []
+  },
+  "dependencies": {
+    "provides": [],
+    "depends": [],
+    "recommends": [],
+    "suggests": [],
+    "breaks": [],
+    "conflicts": []
+  },
+  "etc": {}
+}
