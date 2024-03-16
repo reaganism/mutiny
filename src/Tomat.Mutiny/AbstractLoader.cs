@@ -78,9 +78,6 @@ public abstract class AbstractLoader : ILoader {
     }
 
     public virtual bool SatisfiesDependency(string id, SemVersionRange range) {
-        if (!providedMods.TryGetValue(id, out var providedRange))
-            return false;
-
         // IMPLEMENTATION NOTES:
         // We face a rather peculiar problem here: comparing two SemVer ranges.
         // We take an input 'range' that is a dependency range, which we'll
@@ -92,8 +89,7 @@ public abstract class AbstractLoader : ILoader {
         // We can't compare the two ranges directly as the SemVer package
         // doesn't allow for this; instead, we'll have to compare to the
         // unbroken ranges within.
-
-        return range.Any(innerRange => providedRange.Contains(innerRange));
+        return providedMods.TryGetValue(id, out var providedRange) && range.Any(innerRange => providedRange.Contains(innerRange));
     }
     #endregion
 }
