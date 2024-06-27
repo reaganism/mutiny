@@ -1,11 +1,15 @@
 # mutiny
 
-> Open rebellion; my response to mod loaders.
+> i stuck a dotnet runtime in your game and called it a mod loader
 
 ---
 
-Mutiny is a personal project of mine: a way to combat my frustrations with the current status of mod loaders, especially in the realm of .NET games. I'm tired of dealing with different APIs.
+Mutiny is a mod loader API and implementation designed to be general-purpose and easily implementable.
 
-Mutiny intends to define and implement a standardized API for loading mods and dependencies, including a plugin system to augment the base loader and allow arbitrary loading for further mods.
+It aims to be flexible enough to be used in nearly any context, both within existing .NET contexts and environments in which one may choose to host their own .NET runtime.
 
-The Mutiny API targets .NET Standards and abstracts away the loading process to allow for both `AppDomain` and `AssemblyLoadContext` loading.
+Mutiny is, in part, a response to the fragmented nature of modding games—especially those builty with XNA or Unity and targeting .NET.
+
+Mutiny intends to define and implement a standardized API for discovering and loading mods and their dependencies, including a built-in plugin system to augment the base loader implementation with further support, allowing for arbitrary loading of any content.
+
+The Mutiny API targets .NET Standard to maximize compatibility.
